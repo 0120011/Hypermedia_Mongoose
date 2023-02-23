@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Person erstellen</title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1> Erstelle eine neue Person: </h1>
+
+    <ul>
+      {{# errors }}
+      <li>{{ msg }}</li>
+      {{/ errors }}
+    </ul>
+
+    <form method="post">
+      <label>Name:<br>
+        <input type="text" name="name" value="{{ issue.name }}">
+      </label><br><br>
+      <label>Adresse:<br>
+        <textarea name="adresse">{{ issue.adresse }}</textarea>
+      </label><br><br>
+      <label>Telefonnummmer:<br>
+        <input type="text" name="telefon" value="{{ issue.telefon }}">
+      </label><br><br>
+      <label>E-mail:<br>
+        <input type="text" name="email" value="{{ issue.email }}">
+      </label><br><br>
+
+      <label>Möchten Sie den Newsletter erhalten:<br>
+        <input type="checkbox" name="newsletter" {{# issue.newsletter }}checked{{/ issue.newsletter }}>
+      </label><br><br>
+
+      <button type="submit" class="glow-on-hover"> Erstellen </button>
+    </form>
+
+
+  </body>
+</html>
+

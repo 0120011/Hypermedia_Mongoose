@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title> Personenliste </title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1>Personenliste</h1>
+
+    <table border>
+      <tr>
+        <th>Name</th>
+        <th>Adresse </th>
+        <th>Telefonnummer</th>
+        <th>Email</th>
+        <th>Newsletter</th>
+      </tr>
+      {{# issues }}
+      <tr>
+        <td>{{ name }}</td>
+        <td>{{ adresse }}</td>
+        <td>{{ telefon }}</td>
+        <td>{{ email }}</td>
+        <td>{{ newsletter }}</td>
+        <td>
+          <a href="/edit/{{ _id }}">Bearbeiten</a>
+          <a href="/delete/{{ _id }}">Löschen</a>
+        </td>
+      </tr>
+      {{/ issues }}
+    </table><br>
+    <a href="/new" class="glow-on-hover">Erstellen</a>
+  </body>
+</html>
